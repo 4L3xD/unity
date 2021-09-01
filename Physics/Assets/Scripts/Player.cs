@@ -32,4 +32,12 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector3.up * 500);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
