@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody rb;
+    public float forceMultiplier = 3f;
+    public float maximumVelocity = 3f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,6 +17,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //var horizontalInput = Input.GetAxis("Horizontal");
+        //if (GetComponent<Rigidbody>().velocity.magnitude <= maximumVelocity)
+        //{
+        //    GetComponent<Rigidbody>().AddForce(new Vector3(horizontalInput * forceMultiplier, 0, 0));
+        //}
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * 500);
